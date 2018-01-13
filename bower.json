@@ -1,0 +1,19 @@
+{
+  "name": "syncroh-rails",
+  "description": "",
+  "main": "",
+  "license": "A",
+  "homepage": "https://github.com/Afzal7/syncroh-rails",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^1.0.12",
+    "angular": "^1.6.8"
+  }
+}
