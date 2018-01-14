@@ -1,1 +1,30 @@
-<h1>snippets.html</h1>
+<div id='secret-key-panel' class="panel panel-default">
+  <div class="panel-heading">Syncrow Secret Key</div>
+  <div class="panel-body">{{current_user.access_key}}</div>
+</div>
+
+<div id='snippets-list-panel' class="panel panel-default">
+  <div class="panel-heading">Snippets</div>
+  <div class="panel-body">
+  	<table class='table table-hover' ng-if='current_user.snippets.length'>
+  		<thead>
+  			<tr>
+  				<th>Name</th>
+  				<th>Content</th>
+  				<th>Last updated at</th>
+  			</tr>
+  		</thead>
+
+  		<tbody>
+  			<tr ng-repeat='snippet in current_user.snippets'>
+  				<td>{{snippet.name}}</td>
+  				<td>{{snippet.content}}</td>
+  				<td>{{snippet.updated_at | date}}</td>
+  				<td><span class='' ng-click='deleteSnippet($index)'>x</span></td>
+  			</tr>
+  		</tbody>
+  	</table>
+
+  	<h1 ng-if='!current_user.snippets.length' class='text-center text-lighter'>No Snippets Yet :(</h1>
+  </div>
+</div>

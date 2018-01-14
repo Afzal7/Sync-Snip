@@ -4,6 +4,6 @@ class WelcomeController < ApplicationController
 	def index
 	end
 
-	def snippets
+	def home
 	end
 end

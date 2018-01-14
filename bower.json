@@ -1,9 +1,9 @@
 {
-  "name": "syncroh-rails",
+  "name": "syncrow-rails",
   "description": "",
   "main": "",
   "license": "A",
-  "homepage": "https://github.com/Afzal7/syncroh-rails",
+  "homepage": "https://github.com/Afzal7/syncrow-rails",
   "ignore": [
     "**/.*",
     "node_modules",
