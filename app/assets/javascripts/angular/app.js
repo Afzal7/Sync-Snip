@@ -2,7 +2,8 @@ angular.module('syncrow.controllers',[]);
 var app = angular.module('syncrow', [
 	'syncrow.controllers', 
 	'ui.router', 
-	'templates'
+	'templates',
+	'ngMaterial'
 	]);
 
 app.config(["$httpProvider", function($httpProvider) {

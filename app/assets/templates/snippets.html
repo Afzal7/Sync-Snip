@@ -2,7 +2,9 @@
   <div class="panel-heading">Syncrow Secret Key</div>
   <div class="panel-body">{{current_user.access_key}}</div>
 </div>
-
+<!-- <md-button class="md-primary md-raised" ng-click="showAlert('$event')" >
+      Confirm Dialog
+    </md-button> -->
 <div id='snippets-list-panel' class="panel panel-default">
   <div class="panel-heading">Snippets</div>
   <div class="panel-body">
@@ -12,15 +14,24 @@
   				<th>Name</th>
   				<th>Content</th>
   				<th>Last updated at</th>
+  				<th></th>
   			</tr>
   		</thead>
 
   		<tbody>
   			<tr ng-repeat='snippet in current_user.snippets'>
   				<td>{{snippet.name}}</td>
-  				<td>{{snippet.content}}</td>
+  				<td>
+  					{{snippet.content | limitTo : 100}}
+  					<span ng-show='snippet.content.length>100'>...</span>
+  				</td>
   				<td>{{snippet.updated_at | date}}</td>
-  				<td><span class='' ng-click='deleteSnippet($index)'>x</span></td>
+  				<td>
+  					<!-- <span class='ion ion-ios-close-empty font20' ng-click='deleteSnippet($index)'></span> -->
+  					<md-button class="md-icon-button md-accent" aria-label="Delete" ng-click="showConfirm($event, $index)">
+			        <md-icon class='ion ion-android-close font20'></md-icon>
+			      </md-button>
+  				</td>
   			</tr>
   		</tbody>
   	</table>

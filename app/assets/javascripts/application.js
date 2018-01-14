@@ -13,6 +13,9 @@
 //= require angular
 //= require angular-rails-templates
 //= require angular-ui-router
+//= require angular-aria/angular-aria
+//= require angular-animate/angular-animate
+//= require angular-material/angular-material
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
