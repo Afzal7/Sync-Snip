@@ -1,8 +1,8 @@
 var syncrowControllerModule = angular.module('syncrow.controllers');
 
-var ApplicationController = function($scope, currentUser) {
+var ApplicationController = function(, currentUser) {
 	console.log('Application controller');
 	console.log(currentUser)
 };
 
-syncrowControllerModule.controller('ApplicationController', [ '$scope', 'currentUser', ApplicationController]);
+syncrowControllerModule.controller('ApplicationController', [ '', 'currentUser', ApplicationController]);

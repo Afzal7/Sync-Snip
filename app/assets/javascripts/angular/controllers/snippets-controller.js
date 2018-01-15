@@ -51,7 +51,7 @@ var SnippetsController = function($scope, $http, currentUser, $mdDialog, $mdToas
         .textContent(message)
         .theme('primary')
         .position('bottom right')
-        .hideDelay(30000)
+        .hideDelay(3000)
   	);
   }
 
