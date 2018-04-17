@@ -21,21 +21,32 @@ class Api::V1::UsersController < Api::V1::ApplicationController
     end
   end
 
-  def snippets
+  def sync_snippets
+    snippets_already_present = JSON.parse(params[:snippets_already_present])
+    p snippets_already_present
+    @snippets = @user.snippets.where.not(id: snippets_already_present)
+
+    p @snippets
+
   	render json: {
   		success: true,
-  		data: @user.snippets
+  		data: @snippets
   	}
   end
 
   def add_snippet
-  	if @user.snippets.create(name: params[:name], content: params[:content])
+    @snippet = @user.snippets.new(name: params[:name], content: params[:content])
+  	if @snippet.save
   		render json: {
-  			success: true
+  			success: true,
+        data: @snippet.as_json({
+          only: [:id, :name]
+        })
   		}
   	else
   		render json: {
-  			success: false
+  			success: false,
+        data: @snippet.errors.full_messages.join(', ')
   		}
   	end
   end
@@ -47,7 +58,7 @@ class Api::V1::UsersController < Api::V1::ApplicationController
 			unless @user
 				render json: {
 					success: false,
-					message: 'Wrong Place buddy!'
+					message: 'Please sign in or use a valid syncrow key.'
 				}
 			end
 		end

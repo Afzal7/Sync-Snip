@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   		resources :users do
   			collection do
 	  			get :me
-	  			get :snippets
+	  			post :sync_snippets
 	  			post :add_snippet
   			end			
   		end
